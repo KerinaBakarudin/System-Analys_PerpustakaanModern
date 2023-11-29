@@ -12,25 +12,21 @@ public class PerpustakaanModern {
     public static void main(String[] args) {
         Admin admin = new Admin();
         
-        // Membuat objek AnggotaPerpustakaan
-        AnggotaPerpustakaan anggota = new AnggotaPerpustakaan(1, "erin", "teluk");
+        AnggotaPerpustakaan anggota = new AnggotaPerpustakaan(1, "Rino", "teluk");
 
-        // Membuat objek Notifikasi dengan objek AnggotaPerpustakaan
-        Notifikasi notifikasi = new Notifikasi(1, "Pesan Notifikasi", new Date(), anggota);
+        Notifikasi notifikasi = new Notifikasi(1, "Selamat datang di Perpustakaan Modern", new Date(), anggota);
 
-        // Memanggil metode kirimNotifikasi dengan objek AnggotaPerpustakaan
-        notifikasi.kirimNotifikasi("erin");
+        notifikasi.kirimNotifikasi("Rino");
         
-        Buku bukuBaru = new Buku(1, "Harry Poah", "JK ROWLING", "8289282480");
+        Buku buku1 = new Buku(1, "Laskar Pelangi", "Andrea Hirata", "8289282480");
            
-        TransaksiPeminjaman transaksi1 = new TransaksiPeminjaman(301, LocalDate.now(), LocalDate.now().plusDays(7), bukuBaru, anggota);
-
-        
-        admin.tambahBuku(bukuBaru);
-        anggota.pinjamBuku(bukuBaru);
+        TransaksiPeminjaman transaksi1 = new TransaksiPeminjaman(301, LocalDate.now(), LocalDate.now().minusDays(20), buku1, anggota);
+   
+        admin.tambahBuku(buku1);
+        anggota.pinjamBuku("Laskar Pelangi");
         anggota.kembalikanBuku(transaksi1);
         transaksi1.hitungDenda();
-        admin.hapusBuku("Harry Poah");
+        admin.hapusBuku("Harry Potter");
  
     }
 }
