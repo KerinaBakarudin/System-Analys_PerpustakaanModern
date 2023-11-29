@@ -4,7 +4,6 @@
  */
 package com.mycompany.perpustakaanmodern;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,15 +16,12 @@ public class AnggotaPerpustakaan {
     private String nama;
     private String alamat;
     private List <TransaksiPeminjaman> sejarahPeminjaman;
-    private boolean statusketersediaan;
- 
 
-    public AnggotaPerpustakaan(int idAnggota, String nama, String alamat, List<TransaksiPeminjaman> sejarahPeminjaman, boolean statusketersediaan) {
+    public AnggotaPerpustakaan(int idAnggota, String nama, String alamat, List<TransaksiPeminjaman> sejarahPeminjaman) {
         this.idAnggota = idAnggota;
         this.nama = nama;
         this.alamat = alamat;
         this.sejarahPeminjaman = sejarahPeminjaman;
-        this.statusketersediaan = statusketersediaan;
     }
     
     public AnggotaPerpustakaan(int idAnggota, String nama, String alamat) {
@@ -52,14 +48,6 @@ public class AnggotaPerpustakaan {
         return sejarahPeminjaman;
     }
 
-    public boolean isStatusketersediaan() {
-        return statusketersediaan;
-    }
-
-    public void setStatusketersediaan(boolean statusketersediaan) {
-        this.statusketersediaan = statusketersediaan;
-    }
-    
     public void setIdAnggota(int idAnggota) {
         this.idAnggota = idAnggota;
     }
@@ -76,20 +64,13 @@ public class AnggotaPerpustakaan {
         this.sejarahPeminjaman = sejarahPeminjaman;
     }
     
-    public void pinjamBuku (Buku buku){
-        if(isStatusketersediaan()){
-            statusketersediaan = false;
-            System.out.println("Anda telah meminjam Buku " + buku.getJudul());
-            System.out.println("");
-        }else{
-            System.out.println("Buku \"" + buku.getJudul() + "\" Sedang Tidak Tersedia.");
-            System.out.println("");
-        }
+    public void pinjamBuku(String judulBuku) {
+        System.out.println("Buku \"" + judulBuku + "\" berhasil dipinjam");
     }
-    
+
     public void kembalikanBuku (TransaksiPeminjaman transaksi){
-        statusketersediaan = true;
-        System.out.println("Buku \"" + transaksi.getAnggotaPeminjam() + "\" Telah Dikembalikan.");
-        System.out.println("");
-    }  
+    System.out.println("Buku \"" + transaksi.getBukuDipinjam().getJudul() + "\" Telah Dikembalikan.");
+    System.out.println();
+    }
 }
+
