@@ -1,4 +1,4 @@
-# System-Analys_PerpustakaanModern
+# System-Analyst_PerpustakaanModern
 
 Tugas Pemrograman Berorientasi Objek  <br />
 Anggota Kelompok:  <br />
