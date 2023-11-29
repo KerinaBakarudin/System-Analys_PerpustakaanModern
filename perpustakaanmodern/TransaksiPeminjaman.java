@@ -68,11 +68,14 @@ public class TransaksiPeminjaman {
     
     public void hitungDenda(){
         LocalDate tanggalKembali = LocalDate.now();
-        long selisihHari = ChronoUnit.DAYS.between(tanggalHarusKembali, tanggalKembali);  
+        long selisihHari = ChronoUnit.DAYS.between(tanggalHarusKembali, tanggalKembali); 
+        
+        System.out.println("Tanggal harus kembali: " + tanggalHarusKembali);
+        System.out.println("Tanggal pengembalian: " + tanggalKembali);
         
         if(selisihHari > 0){
             double denda = (double) selisihHari * 1000;
-            System.out.println("Denda yang harus dibayar: Rp " + String.format("%.2f", denda));
+            System.out.println("Anda terlambat mengembalikan buku selama " + selisihHari + " hari. Denda yang harus dibayar: Rp " + String.format("%.2f", denda));
             System.out.println();
         }else{
              System.out.println("Tidak ada denda. Anda mengembalikan tepat waktu.");
