@@ -56,6 +56,7 @@ public class TransaksiPengembalian{
     }
     
     public void prosesPengembalian(){
-        
+        System.out.println("Terima kasih telah mengembalikan buku ini");
+        transaksiPeminjaman.hitungDenda();
     }
 }
