@@ -73,10 +73,10 @@ public class TransaksiPeminjaman {
         if(selisihHari > 0){
             double denda = (double) selisihHari * 1000;
             System.out.println("Denda yang harus dibayar: Rp " + String.format("%.2f", denda));
-            System.out.println("");
+            System.out.println();
         }else{
              System.out.println("Tidak ada denda. Anda mengembalikan tepat waktu.");
-             System.out.println("");
+             System.out.println();
         }
     }
 }
