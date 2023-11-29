@@ -61,6 +61,6 @@ public class Admin {
     }
    
     public void beriDenda (TransaksiPeminjaman transaksi){
-        
+        transaksi.hitungDenda();
     }
 }
