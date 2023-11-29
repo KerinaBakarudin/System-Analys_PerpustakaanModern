@@ -2,6 +2,6 @@
 
 Tugas Pemrograman Berorientasi Objek
 Anggota Kelompok:
-1.
-2.
-3.
+Abi Ihza Rafi Alfano - 2217051114
+Kerina Bakarudin - 2217051027
+Putri Amelia - 2217051074
